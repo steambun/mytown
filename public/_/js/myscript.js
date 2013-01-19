@@ -2,7 +2,7 @@ $(document).ready(function() {
 	$.ajax({
 	  type: "GET",
 	  dataType: "json",
-	  url: "http://localhost:5000/welcome",
+	  url: "/welcome", //http://localhost:5000
 	  complete: function() {
 	  	//alert ('Load complete');
 	  },
