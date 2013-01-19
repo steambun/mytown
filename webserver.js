@@ -17,12 +17,12 @@ app.get('/welcome', function(request, response) {
 	var item = [
 	{
 	  name: 'Green Bustin Skateboard',
-	  category: 'skateboards',
+	  description: 'Awesome bustin skateboard ridden only once, once in a life time opportunity',
 	  price: '$50,000'
 	},
 	{
 	  name: 'Blue Bustin Skateboard',
-	  category: 'skateboards',
+	  description: 'Old had-it skateboard not fit for any one',
 	  price: '$10,000'
 	}
 	];

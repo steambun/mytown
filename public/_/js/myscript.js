@@ -8,13 +8,17 @@ $(document).ready(function() {
 	  },
 	  
 	  success: function(data){
- 	     alert('Load success!! '+data);
+ 	     //alert('Load success!! '+data);
  	     
- 	     //$.each(result, function (key, value) {
- 	     //	$('#ItemList').append(key);//'<li>'+value+'</li>');
- 	     //});
+ 	     $.each(data, function (key, value) {
+ 	     	$('#item-listview').append(
+				'<li>'+
+				'<h3>'+value.name+'</h3>'+
+				'<p>'+value.description+'</p>'+
+				'</li>');
+ 	     });
  	     
- 	     //$('#ItemList').listview('refresh');
+ 	     $('#item-listview').listview('refresh');
 	  },
 	  error: function () {
 		  alert('Unable to load... still'); // should have what's wrong	
