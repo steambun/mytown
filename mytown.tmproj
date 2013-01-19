@@ -10,13 +10,13 @@
 			<key>filename</key>
 			<string>package.json</string>
 			<key>lastUsed</key>
-			<date>2013-01-19T05:04:32Z</date>
+			<date>2013-01-19T05:07:07Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>Procfile</string>
 			<key>lastUsed</key>
-			<date>2013-01-19T05:05:12Z</date>
+			<date>2013-01-19T05:07:07Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
@@ -68,7 +68,7 @@
 					<key>filename</key>
 					<string>public/index.html</string>
 					<key>lastUsed</key>
-					<date>2013-01-19T05:04:28Z</date>
+					<date>2013-01-19T05:07:05Z</date>
 				</dict>
 			</array>
 			<key>expanded</key>
@@ -147,6 +147,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{282, 4}, {1061, 865}}</string>
+	<string>{{270, -583}, {1061, 865}}</string>
 </dict>
 </plist>
