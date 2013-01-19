@@ -3,93 +3,49 @@
 <plist version="1.0">
 <dict>
 	<key>documents</key>
-<<<<<<< HEAD
 	<array>
+		<dict>
+			<key>expanded</key>
+			<true/>
+			<key>name</key>
+			<string>node_modules</string>
+			<key>regexFolderFilter</key>
+			<string>!.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
+			<key>selected</key>
+			<true/>
+			<key>sourceDirectory</key>
+			<string>node_modules</string>
+		</dict>
 		<dict>
 			<key>filename</key>
 			<string>package.json</string>
-			<key>lastUsed</key>
-			<date>2013-01-19T05:07:07Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>Procfile</string>
-			<key>lastUsed</key>
-			<date>2013-01-19T05:07:07Z</date>
 		</dict>
 		<dict>
-			<key>filename</key>
-			<string>web.js</string>
-			<key>lastUsed</key>
-			<date>2013-01-18T16:40:26Z</date>
-			<key>selected</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>children</key>
-			<array>
-				<dict>
-					<key>children</key>
-					<array>
-						<dict>
-							<key>children</key>
-							<array>
-								<dict>
-									<key>filename</key>
-									<string>public/_/js/myscript.js</string>
-								</dict>
-							</array>
-							<key>expanded</key>
-							<true/>
-							<key>name</key>
-							<string>js</string>
-						</dict>
-						<dict>
-							<key>children</key>
-							<array>
-								<dict>
-									<key>filename</key>
-									<string>public/_/css/mystyles.css</string>
-								</dict>
-							</array>
-							<key>expanded</key>
-							<true/>
-							<key>name</key>
-							<string>css</string>
-						</dict>
-					</array>
-					<key>expanded</key>
-					<true/>
-					<key>name</key>
-					<string>_</string>
-				</dict>
-				<dict>
-					<key>filename</key>
-					<string>public/index.html</string>
-					<key>lastUsed</key>
-					<date>2013-01-19T05:07:05Z</date>
-				</dict>
-			</array>
 			<key>expanded</key>
 			<true/>
 			<key>name</key>
 			<string>public</string>
+			<key>regexFolderFilter</key>
+			<string>!.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
+			<key>sourceDirectory</key>
+			<string>public</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>webserver.js</string>
 		</dict>
 	</array>
-=======
-	<array/>
->>>>>>> updated tmproj file again
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict/>
 	<key>showFileHierarchyDrawer</key>
-	<false/>
+	<true/>
 	<key>windowFrame</key>
-<<<<<<< HEAD
-	<string>{{270, -583}, {1061, 865}}</string>
-=======
-	<string>{{569, 393}, {775, 817}}</string>
->>>>>>> updated tmproj file again
+	<string>{{975, 145}, {775, 817}}</string>
 </dict>
 </plist>
