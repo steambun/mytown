@@ -41,8 +41,18 @@
 		<div data-role="header">
 	    	<h1>My Town Selling</h1>
 	    </div><!-- /header -->
-		<div data-role="content">
+		<div data-role="content">		
 	    	<p>Display a upload item form...</p>
+	
+		<form enctype="multipart/form-data" method="post">
+			<div >
+				<input type="text" name="name" id="name" value="" data-mini="true" placeholder="Title"/>
+				<textarea cols="40" rows="8" name="textarea" id="textarea" data-mini="true" placeholder="Description"></textarea>
+				<input type="number" name="number" id="number" value="" placeholder="HKD" />
+				<input type="file" name="file" id="file" value=""/>
+			</div>
+			<button type="submit" data-theme="b" name="submit" value="submit-value">Upload</button>
+		</form>
 		</div>
 		<div data-role="footer"  data-position="fixed">
 			<div data-role="navbar">
