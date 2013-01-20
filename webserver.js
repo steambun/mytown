@@ -18,12 +18,17 @@ app.get('/welcome', function(request, response) {
 	{
 	  name: 'Green Bustin Skateboard',
 	  description: 'Awesome bustin skateboard ridden only once, once in a life time opportunity',
-	  price: '$50,000'
+	  price: '500'
 	},
 	{
 	  name: 'Blue Bustin Skateboard',
 	  description: 'Old had-it skateboard not fit for any one',
-	  price: '$10,000'
+	  price: '100'
+	},
+	{
+	  name: 'Honda Motor Bike',
+	  description: 'New retro black stealthy honda bike only riden for 53 meters before fatal collision!',
+	  price: '2500'
 	}
 	];
 	

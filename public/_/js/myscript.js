@@ -2,7 +2,7 @@ $(document).ready(function() {
 	$.ajax({
 	  type: "GET",
 	  dataType: "json",
-	  url: "/welcome", //http://localhost:5000
+	  url: "/welcome", 
 	  complete: function() {
 	  	//alert ('Load complete');
 	  },
@@ -15,6 +15,7 @@ $(document).ready(function() {
 				'<li>'+
 				'<h3>'+value.name+'</h3>'+
 				'<p>'+value.description+'</p>'+
+				'<p class="ui-li-aside"><strong>'+value.price+' HKD</strong></p>'+
 				'</li>');
  	     });
  	     
