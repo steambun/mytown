@@ -5,7 +5,6 @@
         <title>My Town</title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1">    
-        <title>Single page template</title> 
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
         <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
@@ -15,22 +14,46 @@
 </head>
 <body>
 
-<div data-role="page">
-	
-        <div data-role="header">
-        	<h1>My Town</h1>
-        </div><!-- /header -->
+	<div data-role="page" id="buy">
 
-        <div data-role="content">
-        <p>Dynamic loading on page refresh...</p>       
-                <ul id="item-listview" data-role="listview" class="listview" data-theme="b" >
-                </ul>           
-        </div><!-- /content -->
-                
-        <div data-role="footer">
-                <h4>Footer content</h4>
+	        <div data-role="header">
+	        	<h1>My Town Buying</h1>
+	        </div><!-- /header -->
+
+	        <div data-role="content">
+	        <p>Dynamic loading on page refresh...</p>       
+	                <ul id="item-listview" data-role="listview" class="listview" data-theme="b" >
+	                </ul>           
+	        </div><!-- /content -->
+
+	        <div data-role="footer"  data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+							<li><a href="#buy" class="ui-btn-active">Buy</a></li>
+							<li><a href="#sell" data-role="button" >Sell</a></li>						
+					</ul>
+				</div>
+	        </div><!-- /footer -->
+
+	</div><!-- /page 'buy' end -->
+
+	<div data-role="page" id="sell">
+		<div data-role="header">
+	    	<h1>My Town Selling</h1>
+	    </div><!-- /header -->
+		<div data-role="content">
+	    	<p>Display a upload item form...</p>
+		</div>
+		<div data-role="footer"  data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+						<li><a href="#buy" data-role="button">Buy</a></li>
+						<li><a href="#sell" class="ui-btn-active" >Sell</a></li>						
+				</ul>
+			</div>
         </div><!-- /footer -->
-                
-</div><!-- /page -->
+	</div><!-- /page 'sell' end -->
+
+
 </body>
 </html>
