@@ -13,7 +13,7 @@ $(document).ready(function() {
  	     $.each(data, function (key, value) {
  	     	$('#item-listview').append(
 				'<li>'+
-				'<h3>'+value.name+'</h3>'+
+				'<h3>'+value.title+'</h3>'+
 				'<p>'+value.description+'</p>'+
 				'<p class="ui-li-aside"><strong>'+value.price+' HKD</strong></p>'+
 				'</li>');
