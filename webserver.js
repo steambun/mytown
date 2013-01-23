@@ -39,19 +39,21 @@ app.get('/welcome', function(request, response) {
 	
 });
 
-app.post('/upload',function (request,response){
+app.get('/upload',function (request,response){
     console.log("Request handler 'upload' was called");
 	var in_title = request.param('title');
 	var in_description = request.param('description');
 	var in_price = request.param('price');
 	var in_file = request.param('file');
-	console.log("Parse POST request ["+in_title+"]["+in_description+"]["+in_price+"]["+in_file+"]");
+	console.log("Parse GET request ["+in_title+"]["+in_description+"]["+in_price+"]["+in_file+"]");
 	
 	item.push({
 	  title: in_title,
 	  description: in_description,
 	  price: in_price
 	});
+	
+	response.send('Title: ' + in_title);
 });
 
 http.createServer(app).listen(app.get('port'), function () {
