@@ -11,6 +11,7 @@ $(document).ready(function () {
 		var price = $("#price").val();
 		var file = $("#file").val();	
 		
+		$('#sellsummary-listview').empty();
 		$('#sellsummary-listview').append(
 			'<li>'+
 			'<h3>'+title+'</h3>'+
