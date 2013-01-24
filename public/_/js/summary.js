@@ -10,10 +10,16 @@ $(document).ready(function () {
 		var desc = $("#description").val();
 		var price = $("#price").val();
 		var file = $("#file").val();	
+		var imageurl;
+		
+		if(!file) {
+			imageurl = "_/images/thumbnail-placeholder.jpg";
+		}
 		
 		$('#sellsummary-listview').empty();
 		$('#sellsummary-listview').append(
 			'<li>'+
+			'<img src="'+imageurl+'" />'+
 			'<h3>'+title+'</h3>'+
 			'<p>'+desc+'</p>'+
 			'<p class="ui-li-aside"><strong>'+price+' HKD</strong></p>'+
