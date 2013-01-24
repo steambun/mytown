@@ -5,12 +5,20 @@
         <title>My Town</title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1">    
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+
+		<!-- PROD VERSION-->
+       <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
         <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-        
+
+		<!-- BETA VERSION - RELEASED IN PROD MID FEB 2013 -->        
+<!-- 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0-beta.1/jquery.mobile-1.3.0-beta.1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.0-beta.1/jquery.mobile-1.3.0-beta.1.min.js"></script> -->
+
         <script src="_/js/welcome.js"></script>
-        <script src="_/js/upload.js"></script>
+        <script src="_/js/summary.js"></script>
+        <script src="_/js/submit.js"></script>
         <link rel="stylesheet" href="_/css/mystyles.css" />
 </head>
 <body>
@@ -45,12 +53,12 @@
 		<div data-role="content">		
 	    	<p>Display a upload item form...</p>
 	
-		<form id="upload-form" action="" method="">
+		<form id="summary-form" action="" method="">
 			<fieldset>
-					<input type="text" name="title" value="" data-mini="true" placeholder="Title"/>
-					<textarea cols="40" rows="8" name="description" data-mini="true" placeholder="Description"></textarea>
-					<input type="number" name="price" value="" data-mini="true"  placeholder="HKD" />
-					<input type="file" name="file" value=""/>
+					<input type="text" name="title" value="" id="title" data-mini="true" placeholder="Title"/>
+					<textarea cols="40" rows="8" name="description" id="description" data-mini="true" placeholder="Description"></textarea>
+					<input type="number" name="price" value="" id="price" data-mini="true"  placeholder="HKD" />
+					<input type="file" name="file" value="" id="file"/>
 					<button type="submit" data-theme="b" name="submit" value="submit-value">Submit</button>
 			</fieldset>
 			
@@ -73,19 +81,16 @@
 	<div data-role="content">		
     	<p>Welcome to the summary form!!</p>
 
-		<form action="index.html" method="get">
-
 					<h2>You Chose:</h2>
+					<ul id="sellsummary-listview" data-role="listview" class="listview" data-theme="b" data-inset="true">
+			        </ul>
 
-					<div class="ui-body ui-body-d ui-corner-all">
-
-							Need to data for review here....
-							<ul id="sellsummary-listview" data-role="listview" class="listview" data-theme="b" >
-			                </ul>
+			<form id="submit-form" action="" method="get">		
+		    		<div data-role="controlgroup" data-type="horizontal" >
+								<a href="#sell" data-role="button" data-theme="b" data-icon="back">Amend</a>
+								<button type="submit" data-theme="b" name="submit" value="submit-value" data-icon="check">Submit</button>
+								<!--<a href="index.html" data-role="button" data-theme="b" data-icon="check">Submit</a>-->
 					</div>
-
-					<a href="#sell" data-role="button" data-theme="b" data-icon="arrow-l">Modify Details</a>
-
 			</form>
 
 	</div>

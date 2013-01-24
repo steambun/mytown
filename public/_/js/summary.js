@@ -1,18 +1,24 @@
 $(document).ready(function () {
-	$('#upload-form').submit(function(e){
+	$('#summary-form').submit(function(e){
 		
 		// changes the navigation to another page anchor where we will
 		// show the user a summary of what they want to sell... before confirming
 		// and then eventually send the data to the server
-		$.mobile.changePage('#sell-summary');
+		$.mobile.changePage('#sell-summary', "slideUp");
+		
+		var title = $("#title").val();
+		var desc = $("#description").val();
+		var price = $("#price").val();
+		var file = $("#file").val();	
 		
 		$('#sellsummary-listview').append(
 			'<li>'+
-			'<h3>'+'BLAH'+'</h3>'+
-			'<p>'+'BLAH'+'</p>'+
+			'<h3>'+title+'</h3>'+
+			'<p>'+desc+'</p>'+
+			'<p class="ui-li-aside"><strong>'+price+' HKD</strong></p>'+
 			'</li>');
 		
-		//$('#sellsummary-listview').listview('refresh');
+		$('#sellsummary-listview').listview('refresh');
 		
 		// returning false prevents the form submission from taking place
 		// therefore we will remain on the sell-summary page where

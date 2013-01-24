@@ -39,7 +39,7 @@ app.get('/welcome', function(request, response) {
 	
 });
 
-app.get('/upload',function (request,response){
+app.get('/submit',function (request,response){
     console.log("Request handler 'upload' was called");
 	var in_title = request.param('title');
 	var in_description = request.param('description');
