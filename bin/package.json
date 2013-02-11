@@ -1,0 +1,14 @@
+{
+  "name": "mytown-shredder",
+  "description": "My Town Community",
+  "version": "0.0.1",
+  "private":true,
+  "dependencies": {
+    "request": "2.12.x",
+	"cheerio":"0.10.x"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  }
+}
