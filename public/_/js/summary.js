@@ -31,24 +31,5 @@ $(document).ready(function () {
 		// therefore we will remain on the sell-summary page where
 		// the user can review what they'd like to do before actually need to submit
 		return false; 
-		
-		/*
-		$.ajax({
-		  type: "GET",
-		  dataType: "json",
-		  url: "/upload", 
-		  complete: function() {
-		  	alert ('Load complete');
-		  },
-	  
-		  success: function(data){
-	 	     alert('Load success!! '+data);
- 	     
-	 	     
-		  },
-		  error: function () {
-			  alert('Unable to load... still'); // should have what's wrong	
-		  }
-		});**/
 	});
 });
