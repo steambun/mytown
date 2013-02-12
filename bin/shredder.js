@@ -3,15 +3,50 @@
 var request = require('request');
 var cheerio = require('cheerio');
 
-var theurl = "http://hongkong.asiaxpat.com/classifieds/babies-kids-stuff/";
-var pageIndex = 1;
+var topicArray = new Array(
+		"babies-kids-stuff/",
+		"computers-accessories/"
+/**		,
+		"antiques/",
+		"debentures-memberships/",
+		"cameras-accessories/",
+		"electronics-tvs-stereos/",
+		"handbags-wallets-luggage/",
+		"home-furnishings/",		
+		"items-under-$50/",
+		"musical-instruments/",
+		"other/",
+		"pets-pet-products/",
+		"sporting-goods-accessories-bicycles/",
+		"toys-games/",
+		"artwork-paintings/",
+		"books-magazines/",
+		"clothing-apparel/",
+		"cosmetics-personal-care/",
+		"dvds-vcds-cds/",
+		"free/",
+		"home-appliances/",
+		"internet-cable-contracts/",
+		"jewellery-watches/",
+		"maternity-clothes-items/",
+		"office-equipment-stationery/",
+		"outdoor-garden-items/",
+		"phones-accessories/",
+		"tickets-vouchers/"**/
+	);
+var theurl = "http://hongkong.asiaxpat.com/classifieds/";
 var adIndex = 1;
 var imagePrefix = "http://hongkong.asiaxpat.com";
 
-parseClassified(pageIndex);
+topicArray.forEach(function(item){
+	var startPageIndex= 1;
+	var topicUrl = theurl+item;
+	console.log("Trying to shred topic["+item+"]")
+	parseClassifiedSection(startPageIndex,topicUrl);
+});
 
-function parseClassified(pageIndex){
-	url = theurl+pageIndex+"/";
+function parseClassifiedSection(pageIndex,topicUrl){
+	url = topicUrl+pageIndex+"/";
 	console.log("Trying to shred url["+url+"]");
 	
 	var foundAd = false;
@@ -41,7 +76,7 @@ function parseClassified(pageIndex){
 	  });
 	  if(foundAd){
 		pageIndex++;
-		parseClassified(pageIndex);	
+		parseClassifiedSection(pageIndex,topicUrl);	
 	  }
 	});
 }
