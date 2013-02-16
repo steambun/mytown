@@ -16,7 +16,7 @@ $(document).ready(function () {
 			$('#sellconfirm-listview').append(
 				'<li>'+
 				'<h3>'+'<Information from Server>'+'</h3>'+
-				'<p>'+response.some+'</p>'+
+				'<p>'+response.message+'</p>'+
 				'</li>');
 
 			$('#sellconfirm-listview').listview('refresh');
@@ -25,3 +25,4 @@ $(document).ready(function () {
 		return false;
 	});
 });
+

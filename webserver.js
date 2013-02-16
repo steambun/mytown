@@ -5,6 +5,8 @@ var express = require('express'),
 var app = express();
 
 // global item stack
+var dupCheck ={};
+
 var item = [
 {
   title: 'Green Bustin Skateboard',
@@ -46,18 +48,45 @@ app.post('/submit',function (request,response){
 	var rdesc = request.param('description');
 	var rprice = request.param('price');
 	var rfile = request.param('file');
-	console.log("Parse POST ["+rtitle+"]["+rdesc+"]["+rprice+"]["+rfile+"]");
+	var rid = request.param('id');
+	if(typeof(rid) === 'undefined'){
+		rid = guid();
+	}
 	
-	item.push({
-	  title: rtitle,
-	  description: rdesc,
-	  price: rprice
-	});
+	// check for a duplicate
+	var foundDup = dupCheck[rid];
+	if(foundDup!==undefined)
+	{
+		console.log("Ignore - found duplicate submit ["+rid+"]");
+		response.contentType("json");
+		response.send({message:"Failed submission, duplicate entry found"});
+		return;
+	}
+	else
+	{
+		// print out the activity
+		console.log("Parse POST ["+rtitle+"]["+rdesc+"]["+rprice+"]["+rfile+"]["+rid+"]");
+		var data = {title: rtitle,description: rdesc,price: rprice,id : rid	};
+		dupCheck[rid]={};
+		item.push(data);	
+		
+		response.contentType("json");
+		response.send({message:"Successful submission processed"});
+	}
 	
-	response.contentType("json");
-	response.send({some:'json'});
 });
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log("Express server listening on port " + app.get('port'));
 });
+
+function s4() {
+  return Math.floor((1 + Math.random()) * 0x10000)
+             .toString(16)
+             .substring(1);
+};
+
+function guid() {
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+         s4() + '-' + s4() + s4() + s4();
+}
