@@ -9,7 +9,8 @@ $(document).ready(function () {
 		var title = $("#title").val();
 		var desc = $("#description").val();
 		var price = $("#price").val();
-		var file = $("#file").val();	
+		var file = $("#file").val();
+		var phone = $("#phone").val();	
 		var imageurl;
 		
 		if(!file) {
@@ -22,6 +23,7 @@ $(document).ready(function () {
 			'<img src="'+imageurl+'" />'+
 			'<h3>'+title+'</h3>'+
 			'<p>'+desc+'</p>'+
+			'<p>'+phone+'</p>'+
 			'<p class="ui-li-aside"><strong>'+price+' HKD</strong></p>'+
 			'</li>');
 		

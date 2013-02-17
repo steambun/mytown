@@ -77,9 +77,12 @@ function parseClassifiedSection(pageIndex,topicUrl){
 			console.log('Pic:'+$pic);
 		});
 		
+		var $phone = findPhoneNumber($desc);
+		console.log('Phone:'+$phone);
+		
 		// send post request to webserver.js
 		// node: missing DATE, LOCATION, FOREIGN-ID, CONTACT and all but last PIC
-		var form = {"title":$title,"description":$desc,"price":"100","file":$pic,"id":$id};
+		var form = {"title":$title,"description":$desc,"price":"100","file":$pic,"id":$id,"phone":$phone};
 		console.log(form);
 		request.post("http://localhost:"+port+"/submit").form(form);
 		
@@ -90,4 +93,15 @@ function parseClassifiedSection(pageIndex,topicUrl){
 		parseClassifiedSection(pageIndex,topicUrl);	
 	  }
 	});
+}
+
+function findPhoneNumber(blob){
+	var patt = new RegExp("[0-9]{4}.{0,1}[0-9]{4}");
+	var phone = blob.match(patt);
+	if(phone!=undefined){
+		phone=phone.toString().replace(/[\(\)-\s]/g, "");
+	}
+	console.log("phone["+phone+"]");
+	
+	return phone;
 }

@@ -49,6 +49,7 @@ app.post('/submit',function (request,response){
 	var rprice = request.param('price');
 	var rfile = request.param('file');
 	var rid = request.param('id');
+	var rphone = request.param('phone');
 	if(typeof(rid) === 'undefined'){
 		rid = guid();
 	}
@@ -65,8 +66,8 @@ app.post('/submit',function (request,response){
 	else
 	{
 		// print out the activity
-		console.log("Parse POST ["+rtitle+"]["+rdesc+"]["+rprice+"]["+rfile+"]["+rid+"]");
-		var data = {title: rtitle,description: rdesc,price: rprice,id : rid	};
+		console.log("Parse POST ["+rtitle+"]["+rdesc+"]["+rprice+"]["+rfile+"]["+rid+"]["+rphone+"]");
+		var data = {title: rtitle,description: rdesc,price: rprice,id : rid,phone:rphone	};
 		dupCheck[rid]={};
 		item.push(data);	
 		

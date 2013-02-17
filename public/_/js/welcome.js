@@ -13,8 +13,9 @@ $(document).ready(function() {
  	     $.each(data, function (key, value) {
  	     	$('#item-listview').append(
 				'<li>'+
-				'<h3>'+value.title+'</h3>'+
+				'<h4>'+value.title+'</h4>'+
 				'<p>'+value.description+'</p>'+
+				phone_html(value.phone)+
 				'<p class="ui-li-aside"><strong>'+value.price+' HKD</strong></p>'+
 				'</li>');
  	     });
@@ -26,3 +27,12 @@ $(document).ready(function() {
 	  }
 	});
 });
+
+function phone_html(phone) {
+	if(phone){
+		return '<p>Call: '+phone+'</p>'
+	}
+	else{
+		return "";
+	}
+}
