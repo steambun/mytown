@@ -1,0 +1,1 @@
+web: node shredder.js mytown-uat.herokuapp.com

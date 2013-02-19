@@ -7,7 +7,8 @@ var app = express();
 // global item stack
 var dupCheck ={};
 
-var item = [
+var item =[];
+/** = [
 {
   title: 'Green Bustin Skateboard',
   description: 'Awesome bustin skateboard ridden only once, once in a life time opportunity',
@@ -23,7 +24,7 @@ var item = [
   description: 'New retro black stealthy honda bike only riden for 53 meters before fatal collision!',
   price: '2500'
 }
-];
+];**/
 
 app.configure(function(){
 	app.set('port', process.env.PORT || 5000);

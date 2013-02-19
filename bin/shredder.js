@@ -3,7 +3,14 @@
 var request = require('request');
 var cheerio = require('cheerio');
 
-var port = process.env.PORT || 5000;
+if (process.argv[2]!=undefined){
+	domain = process.argv[2];
+}
+else{
+	domain = "localhost:5000";
+}
+
+console.log("mytownurl["+domain+"]");
 
 var topicArray = new Array(
 		"babies-kids-stuff/"
@@ -84,7 +91,7 @@ function parseClassifiedSection(pageIndex,topicUrl){
 		// node: missing DATE, LOCATION, FOREIGN-ID, CONTACT and all but last PIC
 		var form = {"title":$title,"description":$desc,"price":"100","file":$pic,"id":$id,"phone":$phone};
 		console.log(form);
-		request.post("http://localhost:"+port+"/submit").form(form);
+		request.post("http://"+domain+"/submit").form(form);
 		
 		adIndex++;
 	  });
