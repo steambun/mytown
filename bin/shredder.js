@@ -87,9 +87,12 @@ function parseClassifiedSection(pageIndex,topicUrl){
 		var $phone = findPhoneNumber($desc);
 		console.log('Phone:'+$phone);
 		
+		var $price= findPrice($title,$desc);
+		console.log('Price:'+$price);
+		
 		// send post request to webserver.js
 		// node: missing DATE, LOCATION, FOREIGN-ID, CONTACT and all but last PIC
-		var form = {"title":$title,"description":$desc,"price":"100","file":$pic,"id":$id,"phone":$phone};
+		var form = {"title":$title,"description":$desc,"price":$price,"file":$pic,"id":$id,"phone":$phone};
 		console.log(form);
 		request.post("http://"+domain+"/submit").form(form);
 		
@@ -102,13 +105,44 @@ function parseClassifiedSection(pageIndex,topicUrl){
 	});
 }
 
+function findPrice(title,desc)
+{
+	var price=findPriceInDesc(title);
+	if(price==undefined){
+		price=findPriceInDesc(desc);
+	}
+	return price;
+}
+
+function findPriceInDesc(blob){
+	var patt = new RegExp("((hkd|\\$)\\s*)[0-9]{1,}","gi");
+	var price = blob.match(patt);
+	
+	if(price!=undefined){
+		if(price.length>1){
+			var longest = price.sort(function (a, b) { return b.length - a.length; })[0];
+			price = Array(longest.length).join("$");
+		}
+		else
+		{
+			price=price[0].replace(new RegExp("(hkd|\\$)\\s*","gi"),"");
+		}
+	}
+	
+	return price;
+}
+
 function findPhoneNumber(blob){
 	var patt = new RegExp("[0-9]{4}.{0,1}[0-9]{4}");
 	var phone = blob.match(patt);
 	if(phone!=undefined){
 		phone=phone.toString().replace(/[\(\)-\s]/g, "");
 	}
-	console.log("phone["+phone+"]");
+	//console.log("phone["+phone+"]");
 	
 	return phone;
 }
+
+module.exports.findPrice=findPrice;
+module.exports.findPriceInDesc=findPriceInDesc;
+module.exports.findPhoneNumber=findPhoneNumber;

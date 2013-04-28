@@ -5,7 +5,11 @@
   "private":true,
   "dependencies": {
     "request": "2.12.x",
-	"cheerio":"0.10.x"
+	"cheerio":"0.10.x",
+	"mocha":"1.9.x"
+  },
+  "scripts": {
+	"test":"make test"
   },
   "engines": {
     "node": "0.8.x",
