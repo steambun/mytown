@@ -115,8 +115,13 @@ function findPrice(title,desc)
 }
 
 function findPriceInDesc(blob){
-	var patt = new RegExp("((hkd|\\$)\\s*)[0-9]{1,}","gi");
-	var price = blob.match(patt);
+	var prefixPattern = new RegExp("((hkd|\\$)\\s*)[0-9]{1,}","gi");
+	var price = blob.match(prefixPattern);
+	
+	if(price==undefined){
+		postfixPattern = new RegExp("[0-9]{1,}(\\s*(hkd|\\$))","gi");
+		price = blob.match(postfixPattern);
+	}
 	
 	if(price!=undefined){
 		if(price.length>1){
@@ -125,7 +130,7 @@ function findPriceInDesc(blob){
 		}
 		else
 		{
-			price=price[0].replace(new RegExp("(hkd|\\$)\\s*","gi"),"");
+			price=price[0].replace(new RegExp("\\s*(hkd|\\$)\\s*","gi"),"");
 		}
 	}
 	

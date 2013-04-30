@@ -18,6 +18,14 @@ suite("findPrice", function() {
 		assert.equal(findPriceInDesc("Selling A for $323 and B for $5455 only"),"$$$$");
 	});
 	
+	test("should return price if postfixed by HKD",function(){
+		assert.equal(findPriceInDesc("bicycle for 342HKD the end"),"342");
+	});
+
+	test("should return price if contains space after numbers and sign",function(){
+		assert.equal(findPriceInDesc("bicycle for 342 HKD"),"342");
+	});
+	
 	test("should return price if prefixed by HKD",function(){
 		assert.equal(findPriceInDesc("bicyle for HKD342"),"342");
 	});
@@ -26,8 +34,12 @@ suite("findPrice", function() {
 		assert.equal(findPriceInDesc("$1,200 or $1,201"),"$$$$");
 	});
 	
-	test("should return price if contains space between numbers and sign",function(){
-		assert.equal(findPrice("bicycle for HKD 324"),"324");
+	test("should return price if contains space before numbers and sign",function(){
+		assert.equal(findPriceInDesc("bicycle for HKD 324"),"324");
+	});
+	
+	test.skip("should return price if joined by word immediately after when there are 2 prices",function(){
+		assert.equal(findPriceInDesc("bicycle for HKD342 and HKD530Can"),"$$$");
 	});
 	
 	test("should return title price if price is in title",function(){

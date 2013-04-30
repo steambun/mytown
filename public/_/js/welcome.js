@@ -42,7 +42,7 @@ function price_html(price){
 
 function phone_html(phone) {
 	if(phone){
-		return '<p>Call: '+phone+'</p>'
+		return '<p>Call: '+phone+'</p>';
 	}
 	else{
 		return "";
