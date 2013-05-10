@@ -115,22 +115,28 @@ function findPrice(title,desc)
 }
 
 function findPriceInDesc(blob){
-	var prefixPattern = new RegExp("((hkd|\\$)\\s*)[0-9]{1,}","gi");
+	
+	// handling prefix of currency unit 
+	var commaRegexpPattern = "[1-9]+([\\d,]?\\d)*";
+	var prefixPattern = new RegExp("((hkd|\\$)\\s*)"+commaRegexpPattern,"gi");
 	var price = blob.match(prefixPattern);
 	
 	if(price==undefined){
-		postfixPattern = new RegExp("[0-9]{1,}(\\s*(hkd|\\$))","gi");
+		// handling postfix of currency unit
+		postfixPattern = new RegExp(commaRegexpPattern+"(\\s*(hkd|\\$))","gi");
 		price = blob.match(postfixPattern);
 	}
 	
 	if(price!=undefined){
 		if(price.length>1){
+			// return repeating $ when there's lots of numbers
 			var longest = price.sort(function (a, b) { return b.length - a.length; })[0];
 			price = Array(longest.length).join("$");
 		}
 		else
 		{
 			price=price[0].replace(new RegExp("\\s*(hkd|\\$)\\s*","gi"),"");
+			price=price.replace(",","")
 		}
 	}
 	

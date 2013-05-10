@@ -14,8 +14,8 @@ suite("findPrice", function() {
 		assert.equal(findPriceInDesc("Selling A for $323 and B for $545 only"),"$$$");
 	});
 	
-	test("should return larger of 2 dollars if more than one price more digits than the other price in description",function(){
-		assert.equal(findPriceInDesc("Selling A for $323 and B for $5455 only"),"$$$$");
+	test("should return larger of 3 dollars if more than one price more digits than the other price in description",function(){
+		assert.equal(findPriceInDesc("Selling X for $3 and Selling A for $323 and B for $5455 only"),"$$$$");
 	});
 	
 	test("should return price if postfixed by HKD",function(){
@@ -30,7 +30,15 @@ suite("findPrice", function() {
 		assert.equal(findPriceInDesc("bicyle for HKD342"),"342");
 	});
 	
-	test.skip("should return price if number contains ,",function(){
+	test("should not return price if prefixed by 0",function(){
+		assert.equal(findPriceInDesc("bicycle for 0345",""));
+	})
+	
+	test("should return price if number contains ,",function(){
+		assert.equal(findPriceInDesc("$1,200"),"1200");
+	});
+	
+	test.skip("should return price in $ if multiple numbers and they contain ,",function(){
 		assert.equal(findPriceInDesc("$1,200 or $1,201"),"$$$$");
 	});
 	
