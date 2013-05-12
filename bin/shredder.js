@@ -128,9 +128,11 @@ function findPriceInDesc(blob){
 	}
 	
 	if(price!=undefined){
-		if(price.length>1){
+		if(price.length>1){		
+			
 			// return repeating $ when there's lots of numbers
 			var longest = price.sort(function (a, b) { return b.length - a.length; })[0];
+			longest = longest.replace(",","");
 			price = Array(longest.length).join("$");
 		}
 		else

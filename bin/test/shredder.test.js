@@ -38,7 +38,7 @@ suite("findPrice", function() {
 		assert.equal(findPriceInDesc("$1,200"),"1200");
 	});
 	
-	test.skip("should return price in $ if multiple numbers and they contain ,",function(){
+	test("should return price in $ if multiple numbers and they contain ,",function(){
 		assert.equal(findPriceInDesc("$1,200 or $1,201"),"$$$$");
 	});
 	
