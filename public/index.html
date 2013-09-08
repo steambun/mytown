@@ -14,6 +14,7 @@
         <script src="_/js/welcome.js"></script>
         <script src="_/js/summary.js"></script>
         <script src="_/js/submit.js"></script>
+		<script src="_/js/displayitem.js"></script>
         <link rel="stylesheet" href="_/css/myTown.min.css" />   
 
 		<!-- JAZZY DOWNLOADED ICONS -->
@@ -40,7 +41,19 @@
 				</div>
 	        </div><!-- /footer -->
 
+			<!-- popup display -->
+			<div data-role="popup" id="popupDisplayItem" data-theme="d" data-overlay-theme="b" style="max-width:1000px;" class="ui-corner-all">
+				<div data-role="header" data-theme="d" class="ui-corner-top">
+										<h1>Detailed Description</h1>
+									</div>
+									<div data-role="content" data-theme="d" style="padding:15px;" class="ui-corner-bottom">
+			            <p id="popupDescription"></p> 
+			</div>
+			 </div>
+
+
 	</div><!-- /page 'buy' end -->
+	
 
 	<div data-role="page" id="sell">
 		<div data-role="header">

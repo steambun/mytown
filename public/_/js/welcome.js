@@ -14,16 +14,18 @@ $(document).ready(function() {
 
  	     $.each(data, function (key, value) {
  	     	$('#item-listview').append(
-				'<li>'+
+				'<li><a id="displaydialog" href="#popupDisplayItem" data-rel="popup" data-transition="flip">'+
 				'<img src="'+imageurl+'" />'+
-				'<h4>'+value.title+'</h4>'+
+				'<h3>'+value.title+'</h3>'+
 				'<p >'+value.description+'</p>'+
 				phone_html(value.phone)+
 				price_html(value.price)+
+				'</a>'+
 				'</li>');
  	     });
  	     
  	     $('#item-listview').listview('refresh');
+		
 	  },
 	  error: function () {
 		  alert('Unable to load... still'); // should have what's wrong	
