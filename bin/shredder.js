@@ -13,9 +13,10 @@ else{
 console.log("mytownurl["+domain+"]");
 
 var topicArray = new Array(
-		"babies-kids-stuff/"
+		"automobiles-(owners)/"
 	/**
 		,
+		"babies-kids-stuff/",
 		"computers-accessories/",
 		"antiques/",
 		"debentures-memberships/",
@@ -66,7 +67,10 @@ function parseClassifiedSection(pageIndex,topicUrl){
 	  $(links).each(function(i, link){
 		foundAd = true;
 		console.log("Ad #"+adIndex);
-		var $title = $(link).find('.person').text();
+		var $title = $(link).find('.person');
+		console.log('Raw Title:'+$title.text());
+		console.log('Raw Title:'+$title);
+		$title = $title.text();
 		var $desc = $(link).find('p:nth-child(2)').text();
 		var $contact = $(link).find('.browseColumn:nth-child(1) li:first-child').text().substring(8);
 		var $loc = $(link).find('.browseColumn:nth-child(2) li:first-child').text().substring(9);
