@@ -132,8 +132,8 @@ function findPriceInDesc(blob){
 	}
 	
 	if(price!=undefined){
-		if(price.length>1){		
-			
+		if(price.length>1){					
+			// means there are multiple prices to consider
 			// return repeating $ when there's lots of numbers
 			var longest = price.sort(function (a, b) { return b.length - a.length; })[0];
 			longest = longest.replace(",","");
@@ -141,8 +141,14 @@ function findPriceInDesc(blob){
 		}
 		else
 		{
+			// only a single price to consider
 			price=price[0].replace(new RegExp("\\s*(hkd|\\$)\\s*","gi"),"");
 			price=price.replace(",","")
+			
+			if(price.length==5 || price.length==6){
+				price=(price-(price%1000))/1000;
+				price=price+'k';
+			}
 		}
 	}
 	

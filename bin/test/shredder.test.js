@@ -32,7 +32,7 @@ suite("findPrice", function() {
 	
 	test("should not return price if prefixed by 0",function(){
 		assert.equal(findPriceInDesc("bicycle for 0345",""));
-	})
+	});
 	
 	test("should return price if number contains ,",function(){
 		assert.equal(findPriceInDesc("$1,200"),"1200");
@@ -50,6 +50,17 @@ suite("findPrice", function() {
 		assert.equal(findPriceInDesc("bicycle for HKD342 and HKD530Can"),"$$$");
 	});
 	
+	test("should return desc price with k if 5 digits",function(){
+		assert.equal(findPriceInDesc("Selling car for $12345"),"12k");
+	});	
+	test("should return desc price with k if 6 digits",function(){
+		assert.equal(findPriceInDesc("Selling car for $123456"),"123k");
+	});	
+	
+	test.skip("should return approx price with M if 7 or more digits",function(){
+		assert.equal(findPriceInDesc("Selling car for $1234567"),"1.23M");
+	});
+	
 	test("should return title price if price is in title",function(){
 		assert.equal(findPrice("Cot $123","Selling a cot for $234"),"123");
 	});
@@ -57,6 +68,7 @@ suite("findPrice", function() {
 	test("should return desc price if no price is in title",function(){
 		assert.equal(findPrice("Vtech First Walker","Hardly used Vtech First Walker, with detachable interactive play centre.Price $180If interested text 91631395"),"180");
 	});
+	
 });
 
 suite("findPhoneNumber",function(){
