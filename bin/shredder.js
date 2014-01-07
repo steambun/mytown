@@ -13,10 +13,10 @@ else{
 console.log("mytownurl["+domain+"]");
 
 var topicArray = new Array(
-		"automobiles-(owners)/"
+  	  	"babies-kids-stuff/"
 	/**
 		,
-		"babies-kids-stuff/",
+		"automobiles-(owners)/",
 		"computers-accessories/",
 		"antiques/",
 		"debentures-memberships/",
